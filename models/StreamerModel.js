@@ -16,7 +16,7 @@ const streamerSchema = new mongoose.Schema(
 		},
 		imgUrl: {
 			type: String,
-			required: false,
+			required: true,
 		},
 		upvote: {
 			type: Number,

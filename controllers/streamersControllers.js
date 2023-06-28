@@ -24,7 +24,9 @@ export const addNewStreamer = async (req, res, next) => {
 		name,
 		platform,
 		description,
-		imgUrl: '/asmongold.png',
+		imgUrl: req.file
+			? `http://localhost:3000/${req.file.path}`
+			: 'http://localhost:3000/images/asmongold.png',
 	});
 	try {
 		const newStreamer = await streamer.save();
