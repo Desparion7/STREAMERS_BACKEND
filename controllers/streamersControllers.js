@@ -14,6 +14,12 @@ export const addNewStreamer = async (req, res, next) => {
 			message: 'Validation fail, entered data is incorrect',
 		});
 	}
+	// Check for name length
+	if (name.trim().length > 20) {
+		return res.status(422).json({
+			message: 'Validation fail, name is to long',
+		});
+	}
 	// Check for description length
 	if (description.trim().length > 350) {
 		return res.status(422).json({
